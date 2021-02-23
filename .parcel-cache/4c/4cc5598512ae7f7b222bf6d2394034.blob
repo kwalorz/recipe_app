@@ -492,7 +492,7 @@ const controlRecipes = async function () {
 
     _recipeView.default.render(model.state.recipe);
   } catch (err) {
-    _recipeView.default.renderError();
+    alert(err);
   }
 };
 
@@ -5835,7 +5835,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.TIMEOUT_SEC = exports.API_URL = void 0;
-const API_URL = 'https://forkify-api.herokuapp.com/api/v2/recipeszzzz';
+const API_URL = 'https://forkify-api.herokuapp.com/api/v2/recipes';
 exports.API_URL = API_URL;
 const TIMEOUT_SEC = 10;
 exports.TIMEOUT_SEC = TIMEOUT_SEC;
@@ -5895,10 +5895,6 @@ var _parentElement = new WeakMap();
 
 var _data = new WeakMap();
 
-var _errorMessage = new WeakMap();
-
-var _message = new WeakMap();
-
 var _clear = new WeakSet();
 
 var _generateMarkup = new WeakSet();
@@ -5919,16 +5915,6 @@ class RecipeView {
     });
 
     _data.set(this, {
-      writable: true,
-      value: void 0
-    });
-
-    _errorMessage.set(this, {
-      writable: true,
-      value: 'We could not find that recipe, Please try another one!'
-    });
-
-    _message.set(this, {
       writable: true,
       value: void 0
     });
@@ -5958,29 +5944,12 @@ class RecipeView {
     _classPrivateFieldGet(this, _parentElement).insertAdjacentHTML('afterbegin', markup);
   }
 
-  renderError(message = _classPrivateFieldGet(this, _errorMessage)) {
+  renderError(message) {
     const markup = `
       <div class="error">
             <div>
               <svg>
                 <use href="src/img/${_icons.default}#icon-alert-triangle"></use>
-              </svg>
-            </div>
-            <p>${message}</p>
-          </div>
-        `;
-
-    _classPrivateMethodGet(this, _clear, _clear2).call(this);
-
-    _classPrivateFieldGet(this, _parentElement).insertAdjacentHTML('afterbegin', markup);
-  }
-
-  renderMessage(message = _classPrivateFieldGet(this, _message)) {
-    const markup = `
-      <div class="message">
-            <div>
-              <svg>
-                <use href="src/img/${_icons.default}#icon-smile"></use>
               </svg>
             </div>
             <p>${message}</p>
