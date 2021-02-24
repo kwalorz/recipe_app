@@ -5056,7 +5056,7 @@ exports.state = state;
 
 const loadRecipe = async function (id) {
   try {
-    const data = await (0, _helpers.getJSON)(`${_config.API_URL}${id}`);
+    const data = await (0, _helpers.getJSON)(`${_config.API_URL}/${id}`);
     const {
       recipe
     } = data.data;
@@ -5080,17 +5080,7 @@ const loadRecipe = async function (id) {
 exports.loadRecipe = loadRecipe;
 
 const loadSearchResults = async function (query) {
-  try {
-    const data = await (0, _helpers.getJSON)(`${_config.API_URL}?search=${query}`);
-    data.data.recipes.map(rec => {
-      return {
-        id: rec.id,
-        title: rec.title,
-        publisher: rec.publisher,
-        image: rec.image_url
-      };
-    });
-  } catch (err) {
+  try {} catch (err) {
     console.error(`${err}`);
     throw err;
   }

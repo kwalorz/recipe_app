@@ -5084,10 +5084,11 @@ const loadSearchResults = async function (query) {
     const data = await (0, _helpers.getJSON)(`${_config.API_URL}?search=${query}`);
     data.data.recipes.map(rec => {
       return {
-        id: rec.id,
-        title: rec.title,
-        publisher: rec.publisher,
-        image: rec.image_url
+        id: recipe.id,
+        title: recipe.title,
+        publisher: recipe.publisher,
+        sourceUrl: recipe.source_url,
+        image: recipe.image_url
       };
     });
   } catch (err) {
