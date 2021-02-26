@@ -1,6 +1,7 @@
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
+import resultsView from './views/resultsView.js';
 
 import 'core-js/stable'; //polyfills async await
 import 'regenerator-runtime/runtime'; //polyfills other features
@@ -25,6 +26,7 @@ const controlRecipes = async function () {
 
 const controlSearchResults = async function () {
   try {
+    resultsView.renderSpinner();
     //Get search query
     const query = searchView.getQuery();
     if (!query) return;
