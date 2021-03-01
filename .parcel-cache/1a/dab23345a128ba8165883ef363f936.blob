@@ -6623,14 +6623,14 @@ class View {
   }
 
   update(data) {
-    if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
-    this._data = data;
+    if (!data || Array.isArray(data) && data.length === 0) {
+      return this.renderError();
+      this._data = data;
 
-    const newMarkup = this._generateMarkup();
+      const newMarkup = this._generateMarkup();
 
-    const newDOM = document.createRange().createContextualFragment(newMarkup);
-    const newElements = newDOM.querySelectorAll();
-    console.log(newElements);
+      const newDOM = document.createRange().createContextualFragment();
+    }
   }
 
   _clear() {

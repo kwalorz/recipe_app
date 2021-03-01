@@ -6001,7 +6001,7 @@ class RecipeView extends _View.default {
 
   addHandlerUpdateServings(handler) {
     this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.btn--update-servings');
+      const btn = e.target.closest('btn--update-servings');
       if (!btn) return;
       console.log(btn);
       const {
@@ -6620,17 +6620,6 @@ class View {
     this._clear();
 
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
-  }
-
-  update(data) {
-    if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
-    this._data = data;
-
-    const newMarkup = this._generateMarkup();
-
-    const newDOM = document.createRange().createContextualFragment(newMarkup);
-    const newElements = newDOM.querySelectorAll();
-    console.log(newElements);
   }
 
   _clear() {
