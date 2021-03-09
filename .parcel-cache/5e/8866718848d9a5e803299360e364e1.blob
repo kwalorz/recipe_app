@@ -7044,7 +7044,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-class AddRecipeView extends _View.default {
+class addRecipeView extends _View.default {
   constructor() {
     super();
 
@@ -7067,7 +7067,7 @@ class AddRecipeView extends _View.default {
     this._window.classList.toggle('hidden');
   }
 
-  _addHandlerShowWindow() {
+  addHandlerShowWindow() {
     this._btnOpen.addEventListener('click', this.toggleWindow.bind(this));
   }
 
@@ -7075,7 +7075,7 @@ class AddRecipeView extends _View.default {
 
 }
 
-var _default = new AddRecipeView();
+var _default = new addRecipeView();
 
 exports.default = _default;
 },{"./View.js":"61b7a1b097e16436be3d54c2f1828c73","url:../../img/icons.svg":"76e26787aec41638944b8ba73a60f3ba"}]},{},["037229ca1e17e9d02347c7bded256796","d38ba2ba1ed8677211cf78e597cea6e8","175e469a7ea7db1c8c0744d04372621f"], null)
