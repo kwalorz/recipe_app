@@ -2,6 +2,14 @@ import icons from 'url:../../img/icons.svg';
 
 export default class View {
   _data;
+
+  /**
+   * Render the received object to the DOM
+   * @param {Object | Object[]} data
+   * @param {boolean} [render=true] If false, create markup string instead of rendering to the DOM
+   * @returns {undefined | string} a markup string is returned if render=false
+   * @this {Object} View instance
+   */
   render(data, render = true) {
     //Throw error if data does not exist or is an empty array
     if (!data || (Array.isArray(data) && data.length === 0)) {
@@ -24,7 +32,6 @@ export default class View {
     const newDOM = document.createRange().createContextualFragment(newMarkup);
     const newElements = Array.from(newDOM.querySelectorAll('*'));
     const curElements = Array.from(this._parentElement.querySelectorAll('*'));
-    console.log(newElements);
 
     newElements.forEach((newEl, i) => {
       const curEl = curElements[i];
